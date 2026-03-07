@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    /*10px = 10/16 = 0.625 =62.5%*/
+    font-size: 62.5%;
+}
+body {
+    font-family: Nunito, sans-serif;
+}
+.parent-container {
+    font-size: 1.5rem;
+    margin: 2rem 14rem 0 14rem;
+}
+.container {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    gap: 8rem;
+}
+.container form {
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+}
+.container form div{
+ display: flex;
+ flex-direction: column; 
+ position: relative;
+}
+.container form div > input,.container form div > select{
+ height: 3rem;
+ font-size: inherit;
+  border: none;                /* removes all borders */
+  border-bottom: 1px solid #333; /* adds only bottom border */
+  outline: none;               /* removes the blue outline on focus */
+  font-size: 16px;
+}
+
+.container form div > input:hover ,.container form div > select:hover ,.container form div > input:focus ,.container form div > select:focus {
+    border-bottom: 2px solid #4CAF50;
+    background-color: hsla(0, 0%, 89%, 0.322);
+}
+
+.container form div > select {
+    color: hsl(0, 1%, 57%);
+}
+select:focus {
+  outline: none;       /* removes the default outline */
+  box-shadow: none;    /* removes any glow/shadow */
+}
+button {
+    background-color: #fc8701;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    height: 3rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: hover 1s ease-in-out;
+}
+
+button:hover {
+    outline: 3px solid #4CAF50;
+
+}
+
+.container table {
+    border-collapse: collapse; /* Removes double borders */
+    width: 100%;
+    white-space: nowrap;
+    align-self: flex-start;
+
+}
+.container table th, td {
+    border: 1px solid #a1a1a1; /* Adds border to each cell */
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+#tab-fill-category {
+    width: 100%;
+  border: none;
+  background-color: transparent;
+    font-size: inherit;
+    font-weight: 600;
+}
+
+
+#Amount {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+.error {
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  top: 100%;
+}
+svg {
+  width: 20px;          /* resize */
+  height: 20px;
+  fill: #000000;        /* sets fill color for paths */
+  stroke: #333;         /* optional outline */
+  stroke-width: 2px;
+  cursor: pointer;
+  transition: all 2s ease-in-out;
+}
+svg:hover path{
+    transform: scale(1.05);
+}
+.Context-menu {
+    max-width: 6.2rem;
+    border: 1px solid rgb(17, 17, 17);
+    box-shadow: 1px 1px 10px gray;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    border-radius: 5px;
+    justify-content: center;
+    /* padding: 5px; */
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+}
+
+.Context-menu div{
+    cursor: pointer;
+}
+
+.Context-menu div:hover{
+    cursor: pointer;
+    background-color: #e2dddd;
+}
+@media screen and (max-width: 1000px) {
+    .parent-container {
+    font-size: 1.5rem;
+    margin: 2rem 6rem 0 6rem;
+}
+.container {
+    gap: 4rem;
+}
+}
+@media screen and (max-width: 800px) {
+    .parent-container {
+    font-size: 1.5rem;
+    margin: 2rem 10rem 0 10rem;
+}
+ .container {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 5rem;
+}
+}
+@media screen and (max-width: 570px) {
+
+    .parent-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;        
+
+}
+ h1 {
+    font-size: 1.6rem;
+    white-space: nowrap;
+    margin: auto;
+ } 
+}
