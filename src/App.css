@@ -165,6 +165,9 @@ svg:hover path{
 @media screen and (max-width: 570px) {
 
     .parent-container {
+    margin-top: 2rem;
+}
+    .parent-container {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;  
