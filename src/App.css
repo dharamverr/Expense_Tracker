@@ -139,44 +139,29 @@ svg:hover path{
     cursor: pointer;
     background-color: #e2dddd;
 }
-@media screen and (max-width: 1000px) {
+@media screen  and (width <= 900px){
     .parent-container {
     font-size: 1.5rem;
-    margin: 2rem 6rem 0 6rem;
+    margin: 2rem 2rem 0 2rem;
 }
 .container {
     gap: 4rem;
 }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 790px) {
+    #root {
+        margin-inline: 0;
+    }
     .parent-container {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-}
- .container {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    gap: 5rem;
-}
-}
-@media screen and (max-width: 570px) {
-
-    .parent-container {
-    margin-top: 2rem;
-}
-    .parent-container {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .container {
+        margin-top: 2rem;
+        font-size: 1.5rem;
         display: grid;
         grid-template-columns: 1fr;
-        justify-content: center;  
-        margin-top: 2rem;      
-
-}
- h1 {
-    font-size: 1.6rem;
-    white-space: nowrap;
-    margin: auto;
- } 
+        justify-content: center;
+        gap: 5rem;
+    }
 }
