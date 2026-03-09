@@ -167,7 +167,8 @@ svg:hover path{
     .parent-container {
         display: grid;
         grid-template-columns: 1fr;
-        justify-content: center;        
+        justify-content: center;  
+        margin-top: 2rem;      
 
 }
  h1 {
