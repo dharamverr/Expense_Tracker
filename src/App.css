@@ -151,7 +151,7 @@ svg:hover path{
 @media screen and (max-width: 800px) {
     .parent-container {
     font-size: 1.5rem;
-    margin: 2rem 10rem 0 10rem;
+    margin-top: 2rem;
 }
  .container {
     margin-top: 2rem;
