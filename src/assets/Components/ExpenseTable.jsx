@@ -9,7 +9,7 @@ export default function ExpenseTable({
   setExpense,
   setEditRowId,
 }) {
-  const [query, setQuery] = useLocalStorage('query',"");
+  const [query, setQuery] = useLocalStorage("query", "");
   const [menuPosition, setMenuPosition] = useState({});
   const [rowId, setRowId] = useState("");
   const [sortCallback, setSortCallback] = useState(() => () => {}); // here we want set initial state as empty callback like () => {}. if we do like this arr.sort(() => {}) then sort function nothing will do with original array.
@@ -22,7 +22,7 @@ export default function ExpenseTable({
 
   const totalSum = filteredTable.reduce(
     (accu, curr) => accu + parseFloat(curr.amount),
-    0
+    0,
   );
 
   return (
@@ -39,7 +39,7 @@ export default function ExpenseTable({
       />
       <table border={1} onClick={() => setMenuPosition({})}>
         <thead>
-          <tr style={{backgroundColor: "rgba(238, 239, 240, 0.62)"}}>
+          <tr style={{ backgroundColor: "rgba(238, 239, 240, 0.62)" }}>
             <th id="Amount">
               Title
               <span>
@@ -57,7 +57,9 @@ export default function ExpenseTable({
                   xmlSpace="preserve"
                   className=""
                   onClick={() =>
-                    setSortCallback(() => (a, b) => a.title.localeCompare(b.title))
+                    setSortCallback(
+                      () => (a, b) => a.title.localeCompare(b.title),
+                    )
                   }
                 >
                   <g transform="matrix(0.9300000000000012,0,0,0.9300000000000012,17.906904106139933,17.90687606811514)">
@@ -75,8 +77,10 @@ export default function ExpenseTable({
                   width="512"
                   height="512"
                   viewBox="0 0 511.627 511.627"
-                 onClick={() =>
-                    setSortCallback(() => (a, b) => b.title.localeCompare(a.title))
+                  onClick={() =>
+                    setSortCallback(
+                      () => (a, b) => b.title.localeCompare(a.title),
+                    )
                   }
                 >
                   <g>
@@ -271,6 +275,7 @@ export default function ExpenseTable({
                 </svg>
               </span>
             </th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -288,11 +293,151 @@ export default function ExpenseTable({
                 <td>{title}</td>
                 <td>{category}</td>
                 <td>₹ {amount}</td>
+                <td>
+                  <div className="Action">
+                    <div
+                      onClick={() => {
+                        setExpense({
+                          title: title,
+                          category: category,
+                          amount: amount,
+                        });
+                        setEditRowId(id);
+                      }}
+                    >
+                      <svg
+                        viewBox="0 -0.5 21 21"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        fill="#000000"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <g id="SVGRepo_iconCarrier">
+                          {
+                            '\n                      {" "}\n                      '
+                          }
+                          <title>{"Edit"}</title>
+                          {'{" "}\n                      '}
+                          <desc>{"Created with Sketch."}</desc>
+                          <defs />
+                          {'{" "}\n                      '}
+                          <g
+                            id="Page-1"
+                            stroke="none"
+                            strokeWidth={1}
+                            fill="none"
+                            fillRule="evenodd"
+                          >
+                            {
+                              '\n                        {" "}\n                        '
+                            }
+                            <g
+                              id="Dribbble-Light-Preview"
+                              transform="translate(-59.000000, -400.000000)"
+                              fill="#fc8701"
+                            >
+                              {
+                                '\n                          {" "}\n                          '
+                              }
+                              <g
+                                id="icons"
+                                transform="translate(56.000000, 160.000000)"
+                              >
+                                {
+                                  '\n                            {" "}\n                            '
+                                }
+                                <path
+                                  d="M3,260 L24,260 L24,258.010742 L3,258.010742 L3,260 Z M13.3341,254.032226 L9.3,254.032226 L9.3,249.950269 L19.63095,240 L24,244.115775 L13.3341,254.032226 Z"
+                                  id="edit_fill-[#1480]"
+                                >
+                                  {
+                                    '\n                              {" "}\n                            '
+                                  }
+                                </path>
+                                {'{" "}\n                          '}
+                              </g>
+                              {'{" "}\n                        '}
+                            </g>
+                            {'{" "}\n                      '}
+                          </g>
+                          {'{" "}\n                    '}
+                        </g>
+                      </svg>
+                    </div>
+                    <div
+                      title="Delete"
+                      onClick={() => {
+                        setExpenses((prevState) =>
+                          prevState.filter((expense) => expense.id !== id),
+                        );
+                      }}
+                    >
+                      <svg
+                        width="187px"
+                        height="187px"
+                        viewBox="0 0 24.00 24.00"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        stroke="#fc8701"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <path
+                            d="M10 11V17"
+                            stroke="#fc8701"
+                            strokeWidth="1.7280000000000002"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          ></path>{" "}
+                          <path
+                            d="M14 11V17"
+                            stroke="#fc8701"
+                            strokeWidth="1.7280000000000002"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          ></path>{" "}
+                          <path
+                            d="M4 7H20"
+                            stroke="#fc8701"
+                            strokeWidth="1.7280000000000002"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          ></path>{" "}
+                          <path
+                            d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z"
+                            stroke="#fc8701"
+                            strokeWidth="1.7280000000000002"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          ></path>{" "}
+                          <path
+                            d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                            stroke="#fc8701"
+                            strokeWidth="1.7280000000000002"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          ></path>{" "}
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </td>
               </tr>
             );
           })}
         </tbody>
-        <tfoot style={{ fontWeight: "bold"}}>
+        <tfoot style={{ fontWeight: "bold" }}>
           <tr>
             <td>Total</td>
             <td />

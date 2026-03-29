@@ -83,6 +83,7 @@ button:hover {
     text-align: left;
     white-space: nowrap;
     vertical-align: middle;
+   
   }
 #tab-fill-category {
     width: 100%;
@@ -106,16 +107,23 @@ button:hover {
 }
 svg {
   width: 20px;          /* resize */
-  height: 20px;
-  fill: #000000;        /* sets fill color for paths */
-  stroke: #333;         /* optional outline */
+  height: 20px;          /* optional outline */
   stroke-width: 2px;
   cursor: pointer;
   transition: all 2s ease-in-out;
 }
-svg:hover path{
-    transform: scale(1.05);
+svg:hover {
+  transform: scale(1.08);
+  transform-origin: center;   /* scale from the center */
+  transition: transform 0.1s ease;
 }
+
+ .Action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+ }
 .Context-menu {
     max-width: 6.2rem;
     border: 1px solid rgb(17, 17, 17);
