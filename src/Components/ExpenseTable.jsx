@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ContextMenu from "./ContextMenu";
-import { useLocalStorage } from "../../../Hooks/useLocalStorage";
+import { useLocalStorage } from "../../Hooks/useLocalStorage";
 
 export default function ExpenseTable({
   expenses,

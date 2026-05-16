@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import ExpenseForm from "./assets/Components/ExpenseForm";
-import ExpenseTable from "./assets/Components/ExpenseTable";
+import ExpenseForm from "./Components/ExpenseForm";
+import ExpenseTable from "./Components/ExpenseTable";
 import ExpenseData from "../ExpenseData";
 import { useLocalStorage } from "../Hooks/useLocalStorage";
 
